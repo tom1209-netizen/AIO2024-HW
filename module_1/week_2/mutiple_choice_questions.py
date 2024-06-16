@@ -17,7 +17,10 @@ def check_the_number(N):
 # Test
 N = 7
 assert check_the_number(N) == "False"
-print(check_the_number(N))
+
+N = 2
+result = check_the_number(N)
+print(result)
 
 
 # Q6
