@@ -10,28 +10,28 @@ from queue import Queue
 data = torch.Tensor([1, 2, 3])
 softmax_function = nn.Softmax(dim=0)
 output = softmax_function(data)
-assert round(output[0].item(), 2) == 0.09
+assert torch.isclose(round(output[0].item(), 2), 0.09, rtol=1e-09, atol=1e-09)
 print(f"Q1 result: {output}")
 
 # Q2
 data = torch.Tensor([5, 2, 4])
 my_softmax = Softmax()
 output = my_softmax(data)
-assert round(output[-1].item(), 2) == 0.26
+assert torch.isclose(round(output[-1].item(), 2), 0.26, rtol=1e-09, atol=1e-09)
 print(f"Q2 result: {output}")
 
 # Q3
 data = torch.Tensor([1, 2, 30000000])
 my_softmax = Softmax()
 output = my_softmax(data)
-assert round(output[0].item(), 2) == 0.0
+assert torch.isclose(round(output[0].item(), 2), 0.0, rtol=1e-09, atol=1e-09)
 print(f"Q3 result: {output}")
 
 # Q4
 data = torch.Tensor([1, 2, 3])
 softmax_stable = SoftmaxStable()
 output = softmax_stable(data)
-assert round(output[-1].item(), 2) == 0.67
+assert torch.isclose(round(output[-1].item(), 2), 0.67, rtol=1e-09, atol=1e-09)
 print(f"Q4 result: {output}")
 
 # Q5

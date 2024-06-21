@@ -1,22 +1,28 @@
 class Stack:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.stack = []
+        self.items = []
 
     def is_empty(self):
-        return len(self.stack) == 0
+        return len(self.items) == 0
 
     def is_full(self):
-        return len(self.stack) == self.capacity
+        return len(self.items) == self.capacity
 
     def pop(self):
-        return self.stack.pop()
+        if self.is_empty():
+            raise IndexError("Cannot pop from an empty stack.")
+        return self.items.pop()
 
     def push(self, element):
-        self.stack.append(element)
+        if self.is_full():
+            raise OverflowError("Cannot push to a full stack.")
+        self.items.append(element)
 
     def top(self):
-        return self.stack[-1]
+        if self.is_empty():
+            raise IndexError("Stack is empty.")
+        return self.items[-1]
 
 
 stack1 = Stack(capacity=5)

@@ -1,29 +1,29 @@
 class Queue:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.queue = []
+        self.items = []
 
     def is_empty(self):
-        return len(self.queue) == 0
+        return len(self.items) == 0
 
     def is_full(self):
-        return len(self.queue) == self.capacity
+        return len(self.items) == self.capacity
 
     def dequeue(self):
         if not self.is_empty():
-            return self.queue.pop(0)
-        return None
+            return self.items.pop(0)
+        return IndexError("Queue is empty")
 
     def enqueue(self, element):
         if not self.is_full():
-            self.queue.append(element)
+            self.items.append(element)
         else:
-            raise Exception("Queue is full")
+            raise OverflowError("Queue is full")
 
     def front(self):
         if not self.is_empty():
-            return self.queue[0]
-        return None
+            return self.items[0]
+        return IndexError("Queue is empty")
 
 
 queue1 = Queue(capacity=5)
