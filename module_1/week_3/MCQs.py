@@ -5,7 +5,6 @@ from ward import Student, Teacher, Ward, Doctor
 from stack import Stack
 from queue import Queue
 
-
 # Q1
 data = torch.Tensor([1, 2, 3])
 softmax_function = nn.Softmax(dim=0)

@@ -34,4 +34,4 @@ print(queue1.front())    # Output: 1
 print(queue1.dequeue())  # Output: 1
 print(queue1.front())    # Output: 2
 print(queue1.dequeue())  # Output: 2
-print(queue1.is_empty()) # Output: True
+print(queue1.is_empty())  # Output: True

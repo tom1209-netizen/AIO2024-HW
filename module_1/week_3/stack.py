@@ -33,4 +33,4 @@ print(stack1.top())      # Output: 2
 print(stack1.pop())      # Output: 2
 print(stack1.top())      # Output: 1
 print(stack1.pop())      # Output: 1
-print(stack1.is_empty()) # Output: True
+print(stack1.is_empty())  # Output: True
